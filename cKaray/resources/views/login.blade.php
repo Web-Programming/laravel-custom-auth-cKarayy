@@ -19,9 +19,9 @@
                             @endif
                             <div class="card-header">
                                 <div class="text-center">
-                                    <img src="{{ asset('image/library.png')}}" class="img-responsive img-body" width="250" height="250">
+                                    <img src="{{ asset('image/library.png')}}" class="img-responsive img-body">
                                 </div>
-
+                               
                                 <h3 class="text-center font-weight-light my-4">Login</h3>
                             </div>
                             <div class="card-body">
@@ -73,7 +73,7 @@
                                         class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                         {{-- <a class="small" href="#">Forgot Password?</a> --}}
                                             <button class="btn w-100 btn-primary btn-block btn-login" type="submit">Login</button>
-
+                                       
                                     </div>
                                 </form>
                             </div>

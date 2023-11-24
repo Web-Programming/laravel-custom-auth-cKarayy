@@ -149,5 +149,5 @@
         </footer>
     </div>
 </div>
-
+    
 @endsection
