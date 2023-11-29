@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         // kita ambil data user lalu simpan pada variable $user
         $user = Auth::user();
-        // kondisi jika user nya ada 
+        // kondisi jika user nya ada
         if ($user) {
             // jika user nya memiliki level admin
             if ($user->level == 'admin') {
@@ -37,14 +37,14 @@ class AuthController extends Controller
     public function proses_login(Request $request)
     {
         // kita buat validasi pada saat tombol login di klik
-        // validas nya username & password wajib di isi 
+        // validas nya username & password wajib di isi
         $request->validate([
             'username' => 'required',
             'password' => 'required'
         ]);
 
 
-        // ambil data request username & password saja 
+        // ambil data request username & password saja
         $credential = $request->only('username', 'password');
 
         // cek jika data username dan password valid (sesuai) dengan data
@@ -69,8 +69,6 @@ class AuthController extends Controller
         return redirect('login')
             ->withInput()
             ->withErrors(['login_gagal' => 'These credentials does not match our records']);
-
-
 
     }
 
@@ -113,11 +111,11 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        // logout itu harus menghapus session nya 
+        // logout itu harus menghapus session nya
 
         $request->session()->flush();
 
-        // jalan kan juga fungsi logout pada auth 
+        // jalan kan juga fungsi logout pada auth
 
         Auth::logout();
         // kembali kan ke halaman login
