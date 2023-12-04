@@ -31,7 +31,7 @@ class ProdiPolicy
     {
         //
        return in_array($user->email,[
-        'callistavirginia@gmail.com',
+        'callista@gmail.com',
         'user2@gmail.com'
        ]);
     }
@@ -51,7 +51,7 @@ class ProdiPolicy
     {
         //
         return in_array($user->email,[
-            'callistavirginia@gmail.com',
+            'callista@gmail.com',
         ]);
     }
 

@@ -39,7 +39,7 @@ class prodiController extends Controller
 
         $validateData = $request->validate([
             'nama' => 'required|min:5|max:20',
-            'poto' => 'required|file|image|max:5000',
+            'foto' => 'required|file|image|max:5000',
             //atau
             //'file_lain' => 'required|file|mimes:pdf,png|max:5000',
         ]);
@@ -47,15 +47,15 @@ class prodiController extends Controller
         // echo $validateData['nama'];
 
         //ambil ekstensi file
-        $ext = $request->poto->getClientOriginalExtension();
+        $ext = $request->foto->getClientOriginalExtension();
 
         //rename nama file
-        $nama_file = "poto-" . time() . "." . $ext;
-        $path = $request->poto->storeAs('public', $nama_file);
+        $nama_file = "foto" . time() . "." . $ext;
+        $path = $request->foto->storeAs('public', $nama_file);
 
         $prodi = new Prodi(); //buat objek prodi
         $prodi->nama = $validateData['nama']; //simpna nilai input ke properti nama prodi
-        $prodi->poto = $nama_file;
+        $prodi->foto = $nama_file;
         $prodi->save();
 
         //return "Data prodi $prodi->nama berhasil disimpan ke database"; //tampilkan pesan berhasil
