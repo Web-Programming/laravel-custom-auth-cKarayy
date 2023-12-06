@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ProdiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\API\RegisterController;
 use Illuminate\Http\Request;
@@ -22,3 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function(){
+    Route::apiResource('prodi', ProdiController::class);
+});
+
+
+
